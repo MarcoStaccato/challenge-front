@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div v-if="currentUser" class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/home" class="nav-link">
+          <router-link to="/operation" class="nav-link">
             <font-awesome-icon icon="home" /> Home
           </router-link>
         </li>

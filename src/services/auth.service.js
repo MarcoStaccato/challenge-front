@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/v1/auth/';
+const API_URL = 'http://localhost.elpalomito.io:8080/api/v1/auth/';
 
 class AuthService {
   login(user) {
@@ -10,10 +10,9 @@ class AuthService {
         password: user.password
       })
       .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem('userCookie', JSON.stringify(response.data));
+        if (response.headers['authorization']) {
+          localStorage.setItem('authorization', response.headers['authorization']);
         }
-
         return response.data;
       });
   }
