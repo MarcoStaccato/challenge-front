@@ -13,11 +13,15 @@
           <n-card title="Random String" @click="setOperation('random')" size="small" hoverable></n-card>
         </n-space>
       </div>
-      <div class="col-9" style="margin-top: 15%;">
-        <n-space v-if="operator !== 'random' && operator !== 'sqrt' " justify="left">
-          <n-button strong secondary round type="info" @click="compute()">
-            Run Operation
-          </n-button>
+      <div class="col-9" style="margin-top: 10%;">
+        <div style="padding-left: 20%;">
+          <n-space>
+            <n-button strong secondary round type="info" @click="compute()">
+              Compute
+            </n-button>
+          </n-space>
+      </div>
+        <n-space v-if="operator !== 'random' && operator !== 'sqrt'" style="margin-top: 10%;">
           <br style="display: block;">
           <n-input ref="numeratorId"
             type="textarea"
@@ -35,16 +39,9 @@
           <h3 class="result">=</h3>
           <h3 class="result">{{this.result}}</h3>
         </n-space>
-        <n-space v-if="operator === 'random'" justify="left">
-          <n-button strong secondary round type="info" @click="compute()">
-            Compute
-          </n-button>
+        <n-space v-if="operator === 'random'">
           <h3 class="result" style="display: block;"> Random String: </h3>
           <h3 class="result">{{this.result}}</h3>
-        </n-space>
-        <n-space vertical>
-          
-            
         </n-space>
       </div>
     </div>
