@@ -40,7 +40,7 @@ class OpsService {
       },
       {
         headers: {
-            'Authorization': localStorage.getItem('authorization')
+          'Authorization': localStorage.getItem('authorization')
         }
     })
       .then(response => {
@@ -66,6 +66,24 @@ class OpsService {
         //can't process that operation
         return ""
     }
+  }
+
+  getRecords(field, pageNumber, pageSize, sorting) {
+    return axios.get(API_URL + 'records', {
+      params: {
+        field: field,
+        pageNumber: pageNumber,
+        pageSize: pageSize,
+        sorting: sorting
+      },
+      headers: {
+          'Authorization': localStorage.getItem('authorization')
+      }
+    })
+    .then(response => {
+      console.log(response)
+        return response;
+    });
   }
 }
 

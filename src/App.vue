@@ -1,14 +1,9 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <div v-if="currentUser" class="navbar-nav mr-auto">
+      <div v-if="currentUser" class="navbar-nav mr-auto" style="padding-left: 20%;">
         <li class="nav-item">
-          <router-link to="/operation" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link v-if="currentUser" to="/operation" class="nav-link">User</router-link>
+          <router-link v-if="currentUser" to="/history" class="nav-link">History</router-link>
         </li>
       </div>
 

@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import Login from "./components/Login.vue";
 import Operation from "./components/Operation.vue";
+import History from "./components/History.vue";
 
 const routes = [
   {
@@ -11,6 +12,10 @@ const routes = [
   {
     path: "/login",
     component: Login,
+  },
+  {
+    path: "/history",
+    component: History,
   }
 ];
 
@@ -23,6 +28,8 @@ router.beforeEach((to, from, next) => {
    const publicPages = ['/login'];
    const authRequired = !publicPages.includes(to.path);
    const loggedIn = localStorage.getItem('authorization');
+
+   console.log("Router validation")
   
     // trying to access a restricted page + not logged in
     // redirect to login page
